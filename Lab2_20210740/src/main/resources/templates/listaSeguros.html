@@ -26,17 +26,14 @@
   </tr>
   </thead>
   <tbody>
-  <tr th:each="employee : ${employeeList}">
-    <td th:text="${employee.employeeId}">1</td>
-    <td th:text="${employee.firstName}">Steven</td>
-    <td th:text="${employee.lastName}">King</td>
-    <td th:text="${employee.job != null ? employee.job.jobTitle : '---'}">Presidente</td>
-    <td th:text="${employee.department != null ? employee.department.departmentName : '---'}">Executive</td>
-    <td th:text="${employee.department != null && employee.department.location != null ? employee.department.location.city : '---'}">Seattle</td>
+  <tr th:each="seguro : ${seguroList}">
+    <td th:text="${seguro.idseguro}">1</td>
+    <td th:text="${seguro.empresa}">Rimac</td>
+    <td th:text="${seguro.cobertura}">15000</td>
+    <td th:text="${seguro.tarifa}">30</td>
     <td>
-      <a th:href="@{/employees/edit(id=${employee.employeeId})}" class="btn btn-sm btn-primary">Editar</a>
-      <a th:href="@{/employees/delete(id=${employee.employeeId})}" class="btn btn-sm btn-danger"
-         onclick="return confirm('¿Seguro?')">Borrar</a>
+      <a th:href="@{/seguro/edit(id=${seguro.idseguro})}" class="btn btn-sm btn-primary">Editar</a>
+      <a th:href="@{/seguro/delete(id=${seguro.idseguro})}" class="btn btn-sm btn-danger">Borrar</a>
     </td>
   </tr>
   </tbody>

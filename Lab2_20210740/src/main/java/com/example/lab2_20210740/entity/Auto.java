@@ -1,12 +1,10 @@
 package com.example.lab2_20210740.entity;
 import jakarta.persistence.*;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @Entity
 @Table(name="auto")
 public class Auto {
 
-    private Integer idauto;
     private String modelo;
     private String color;
     private Integer kilomeraje;
@@ -15,7 +13,7 @@ public class Auto {
     @JoinColumn(name = "sede_idsede")
     private Sede sede;
     @Id
-    private Long id;
+    private Long idauto;
 
     public Sede getSede() {
         return sede;
@@ -26,10 +24,10 @@ public class Auto {
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.idauto = id;
     }
 
     public Long getId() {
-        return id;
+        return idauto;
     }
 }
